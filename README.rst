@@ -50,3 +50,6 @@ The following instructions were adapted from https://github.com/mozilla/rr/wiki/
 
     CC=clang CXX=clang++ cmake -B build/ -G Ninja -Ddisable32bit=ON .
     cmake --build .
+
+    sudo cmake --build . --target install
+    sudo sysctl kernel.perf_event_paranoid=1
