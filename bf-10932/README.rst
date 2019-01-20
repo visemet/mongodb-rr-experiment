@@ -22,6 +22,7 @@ Setup
 .. code-block:: sh
 
     git checkout mongodb-rr-experiment
+    rm -rf ~/.local/share/rr/*
     python2 buildscripts/resmoke.py  \
         -j$(nproc)                   \
         --repeatTests=1000           \
@@ -31,3 +32,20 @@ Setup
         --rr=chaos                   \
         --suite=unittests            \
         build/unittests/collection_cloner_test
+
+Results
+-------
+
+Only the manifestations of BF-10932 are counted here. There were manifestations of BF-10742 when
+running ``collection_cloner_test``.
+
+* 191 / 1000 when using ``--rr=chaos``
+
+  .. code-block:: console
+
+        $ du -hs ~/.local/share/rr
+        531M	/home/ubuntu/.local/share/rr
+
+* 0 / 1000 when using ``--rr=record``
+
+* 0 / 1000 when using ``--rr=off``
