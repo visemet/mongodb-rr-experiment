@@ -53,3 +53,22 @@ The following instructions were adapted from https://github.com/mozilla/rr/wiki/
 
     sudo cmake --build . --target install
     sudo sysctl kernel.perf_event_paranoid=1
+
+Building MongoDB
+````````````````
+
+.. code-block:: sh
+
+    sudo apt install libcurl4-openssl-dev python-pip
+
+.. code-block:: sh
+
+    git clone https://github.com/mongodb/mongo.git
+    cd mongo
+
+    git remote add visemet https://github.com/visemet/mongo.git
+    git fetch visemet mongodb-rr-experiment
+    git checkout mongodb-rr-experiment
+
+    python2 -m pip install -r etc/pip/dev-requirements.txt
+    python2 -m pip install --user psutil==5.4.8
