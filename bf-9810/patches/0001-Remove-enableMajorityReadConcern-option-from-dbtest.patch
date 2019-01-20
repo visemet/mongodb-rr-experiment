@@ -1,0 +1,24 @@
+From 60251b75a0e22c116e76e3782539e107bdad3c76 Mon Sep 17 00:00:00 2001
+From: Max Hirschhorn <max.hirschhorn@mongodb.com>
+Date: Sun, 20 Jan 2019 17:28:04 -0500
+Subject: [PATCH] Remove --enableMajorityReadConcern option from dbtest.
+
+---
+ buildscripts/resmokelib/core/programs.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/buildscripts/resmokelib/core/programs.py b/buildscripts/resmokelib/core/programs.py
+index 6180500845..79b1f14e60 100644
+--- a/buildscripts/resmokelib/core/programs.py
++++ b/buildscripts/resmokelib/core/programs.py
+@@ -340,7 +340,6 @@ def dbtest_program(logger, executable=None, suites=None, process_kwargs=None, **
+     if suites is not None:
+         args.extend(suites)
+ 
+-    kwargs["enableMajorityReadConcern"] = config.MAJORITY_READ_CONCERN
+     if config.STORAGE_ENGINE is not None:
+         kwargs["storageEngine"] = config.STORAGE_ENGINE
+ 
+-- 
+2.17.1
+
