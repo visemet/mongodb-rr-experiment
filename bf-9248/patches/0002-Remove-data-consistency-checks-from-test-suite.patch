@@ -1,0 +1,35 @@
+From b760e94644ad9e1543298ece5db8541c70c09c64 Mon Sep 17 00:00:00 2001
+From: Max Hirschhorn <max.hirschhorn@mongodb.com>
+Date: Sun, 20 Jan 2019 23:31:26 -0500
+Subject: [PATCH 2/2] Remove data consistency checks from test suite.
+
+---
+ .../resmokeconfig/suites/jstestfuzz_sharded.yml      | 12 ------------
+ 1 file changed, 12 deletions(-)
+
+diff --git a/buildscripts/resmokeconfig/suites/jstestfuzz_sharded.yml b/buildscripts/resmokeconfig/suites/jstestfuzz_sharded.yml
+index 475eb03470..ad2b67685f 100644
+--- a/buildscripts/resmokeconfig/suites/jstestfuzz_sharded.yml
++++ b/buildscripts/resmokeconfig/suites/jstestfuzz_sharded.yml
+@@ -16,18 +16,6 @@ executor:
+           # Other fuzzers test commands against sharded clusters with logical session ids.
+           disableImplicitSessions: true
+       readMode: commands
+-  hooks:
+-  - class: CheckReplDBHash
+-    shell_options:
+-      global_vars:
+-        TestData:
+-          skipValidationOnInvalidViewDefinitions: true
+-  - class: ValidateCollections
+-    shell_options:
+-      global_vars:
+-        TestData:
+-          skipValidationOnInvalidViewDefinitions: true
+-          forceValidationWithFeatureCompatibilityVersion: "4.2"
+   fixture:
+     class: ShardedClusterFixture
+     mongos_options:
+-- 
+2.17.1
+
