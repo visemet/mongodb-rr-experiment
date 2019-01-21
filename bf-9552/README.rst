@@ -32,3 +32,21 @@ Setup
         --rr=chaos                                          \
         --suite=concurrency_replication_causal_consistency  \
         jstests/concurrency/fsm_workloads/view_catalog_cycle_lookup.js
+
+Results
+-------
+
+The 1000 runs were manually interrupted due the replica set not making forward progress after the
+``mongod`` process had aborted. This is a direct result of the ``forceSyncSourceCandidate``
+failpoint preventing the secondaries later in the linear chain from choosing another sync source.
+
+* 5 / 563 when using ``--rr=chaos``
+
+  .. code-block:: console
+
+        $ du -hs ~/.local/share/rr
+        20G	/home/ubuntu/.local/share/rr
+
+* Didn't attempt with ``--rr=record``
+
+* Didn't attempt with ``--rr=off``
