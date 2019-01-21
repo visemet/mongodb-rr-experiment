@@ -32,3 +32,17 @@ Setup
         --rr=chaos                                   \
         --suite=sharding_continuous_config_stepdown  \
         jstests/sharding/kill_pinned_cursor.js
+
+Results
+-------
+
+* 2 / 1000 when using ``--rr=chaos``
+
+  .. code-block:: console
+
+        $ du -hs ~/.local/share/rr
+        25G	/home/ubuntu/.local/share/rr
+
+* Didn't attempt with ``--rr=record``
+
+* 1 / 1000 when using ``--rr=off``
