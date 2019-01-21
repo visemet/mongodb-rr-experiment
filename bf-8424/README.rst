@@ -37,3 +37,20 @@ consistently segfaulting during garbage collection when run under ``rr``.
         --suite=jstestfuzz           \
         --numClientsPerFixture=10    \
         ../bf-8424/3c79-mdb_0eba-ent_b8ac-qa_a6ce-1521141161647-72.js
+
+Results
+-------
+
+The 1000 runs were interrupted due to ``resmoke.py`` halting test execution after the ``mongod``
+process had segfaulted.
+
+* 1 / 232 when using ``--rr=chaos``
+
+  .. code-block:: console
+
+        $ du -hs ~/.local/share/rr
+        2.9G	/home/ubuntu/.local/share/rr
+
+* 1 / 973 when using ``--rr=record``
+
+* 0 / 1000 when using ``--rr=off``
