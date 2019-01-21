@@ -1,6 +1,6 @@
-From aab055d5fa15574684a9065fdb001b4fc70b5eec Mon Sep 17 00:00:00 2001
+From 2d0bb7799df65834671b16dea9ef018550392cd6 Mon Sep 17 00:00:00 2001
 From: Max Hirschhorn <max.hirschhorn@mongodb.com>
-Date: Sun, 20 Jan 2019 19:17:19 -0500
+Date: Sun, 20 Jan 2019 19:51:17 -0500
 Subject: [PATCH 3/3] Remove disableLogicalSessionCacheRefresh server
  parameter.
 
@@ -9,7 +9,7 @@ Subject: [PATCH 3/3] Remove disableLogicalSessionCacheRefresh server
  1 file changed, 6 deletions(-)
 
 diff --git a/buildscripts/resmokelib/core/programs.py b/buildscripts/resmokelib/core/programs.py
-index c80f446e10..36e8571565 100644
+index 756b6553ed..a565e1a601 100644
 --- a/buildscripts/resmokelib/core/programs.py
 +++ b/buildscripts/resmokelib/core/programs.py
 @@ -72,12 +72,6 @@ def mongod_program(  # pylint: disable=too-many-branches

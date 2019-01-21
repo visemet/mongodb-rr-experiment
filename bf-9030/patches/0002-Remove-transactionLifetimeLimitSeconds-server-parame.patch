@@ -1,6 +1,6 @@
-From d9b3ef301feafaab6872653fbbe09e313d2264e4 Mon Sep 17 00:00:00 2001
+From e5bd870f24c4144d57b56d3ab377b4a5e59f22a8 Mon Sep 17 00:00:00 2001
 From: Max Hirschhorn <max.hirschhorn@mongodb.com>
-Date: Sun, 20 Jan 2019 19:11:03 -0500
+Date: Sun, 20 Jan 2019 19:51:17 -0500
 Subject: [PATCH 2/3] Remove transactionLifetimeLimitSeconds server parameter.
 
 ---
@@ -8,7 +8,7 @@ Subject: [PATCH 2/3] Remove transactionLifetimeLimitSeconds server parameter.
  1 file changed, 8 deletions(-)
 
 diff --git a/buildscripts/resmokelib/core/programs.py b/buildscripts/resmokelib/core/programs.py
-index 54b089ee07..c80f446e10 100644
+index 0d8248149d..756b6553ed 100644
 --- a/buildscripts/resmokelib/core/programs.py
 +++ b/buildscripts/resmokelib/core/programs.py
 @@ -78,14 +78,6 @@ def mongod_program(  # pylint: disable=too-many-branches
