@@ -34,3 +34,17 @@ Setup
         --rr=chaos                   \
         --suite=dbtest               \
         repl
+
+Results
+-------
+
+* 0 / 1000 when using ``--rr=chaos``
+
+  .. code-block:: console
+
+        $ du -hs ~/.local/share/rr
+        23G	/home/ubuntu/.local/share/rr
+
+* Didn't attempt with ``--rr=record``
+
+* Didn't attempt with ``--rr=off``
