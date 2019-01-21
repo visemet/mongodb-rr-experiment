@@ -34,3 +34,17 @@ Setup
         --rr=chaos                          \
         --suite=no_passthrough_with_mongod  \
         jstests/noPassthroughWithMongod/wt_roundtrip_creation_string.js
+
+Results
+-------
+
+* 0 / 1000 when using ``--rr=chaos``
+
+  .. code-block:: console
+
+        $ du -hs ~/.local/share/rr
+        1.4G	/home/ubuntu/.local/share/rr
+
+* 0 / 1000 when using ``--rr=record``
+
+* 0 / 1000 when using ``--rr=off``
