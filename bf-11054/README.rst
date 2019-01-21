@@ -31,3 +31,17 @@ Setup
         --rr=chaos                   \
         --suite=rollback_fuzzer      \
         ../bf-11054/rollback_test-656f-1540430041796-00.js
+
+Results
+-------
+
+* 7 / 1000 when using ``--rr=chaos``
+
+  .. code-block:: console
+
+        $ du -hs ~/.local/share/rr
+        70G	/home/ubuntu/.local/share/rr
+
+* Didn't attempt with ``--rr=record``
+
+* 3 / 1000 when using ``--rr=off``
