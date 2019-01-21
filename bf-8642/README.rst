@@ -36,3 +36,17 @@ Setup
         --rr=chaos                                      \
         --suite=concurrency_sharded_causal_consistency  \
         jstests/concurrency/fsm_workloads/reindex.js
+
+Results
+-------
+
+* 3 / 1000 when using ``--rr=chaos``
+
+  .. code-block:: console
+
+        $ du -hs ~/.local/share/rr
+        36G	/home/ubuntu/.local/share/rr
+
+* Didn't attempt with ``--rr=record``
+
+* 0 / 1000 when using ``--rr=off``
