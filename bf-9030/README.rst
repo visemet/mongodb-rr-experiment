@@ -38,3 +38,21 @@ Setup
         --rr=chaos                   \
         --suite=parallel             \
         jstests/parallel/basic.js
+
+Results
+-------
+
+The 1000 runs were interrupted due to ``rr`` aborting with a message saying ``Assertion `false'
+failed to hold. Can't defer deterministic or internal signal
+{signo:SIGSEGV,errno:SUCCESS,code:SEGV_MAPERR,addr:0} at ip 0x6fdd1931``
+
+* 0 / 48 when using ``--rr=chaos``
+
+  .. code-block:: console
+
+        $ du -hs ~/.local/share/rr
+        9.8G	/home/ubuntu/.local/share/rr
+
+* Didn't attempt with ``--rr=record``
+
+* Didn't attempt with ``--rr=off``
