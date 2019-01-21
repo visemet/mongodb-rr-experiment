@@ -40,3 +40,17 @@ Setup
         --rr=chaos                                 \
         --suite=change_streams_mongos_passthrough  \
         jstests/change_streams/change_stream_collation.js
+
+Results
+-------
+
+* 0 / 1000 when using ``--rr=chaos``
+
+  .. code-block:: console
+
+        $ du -hs ~/.local/share/rr
+        2.3G	/home/ubuntu/.local/share/rr
+
+* Didn't attempt with ``--rr=record``
+
+* Didn't attempt with ``--rr=off``
