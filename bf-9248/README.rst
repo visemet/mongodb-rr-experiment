@@ -40,3 +40,17 @@ consistently segfaulting during garbage collection when run under ``rr``.
         --suite=jstestfuzz_sharded   \
         --numClientsPerFixture=10    \
         ../bf-9248/d01d5-mdb_4cee-ent_7a02-qa_a6ce-1526944867781-48.js
+
+Results
+-------
+
+* 0 / 1000 when using ``--rr=chaos``
+
+  .. code-block:: console
+
+        $ du -hs ~/.local/share/rr
+        24G	/home/ubuntu/.local/share/rr
+
+* Didn't attempt with ``--rr=record``
+
+* Didn't attempt with ``--rr=off``
