@@ -41,3 +41,17 @@ Setup
         --rr=chaos                              \
         --suite=change_streams_secondary_reads  \
         jstests/change_streams/change_stream_ban_from_views.js
+
+Results
+-------
+
+* 193 / 1000 when using ``--rr=chaos``
+
+  .. code-block:: console
+
+        $ du -hs ~/.local/share/rr
+        2.6G	/home/ubuntu/.local/share/rr
+
+* 96 / 1000 when using ``--rr=record``
+
+* 54 / 1000 when using ``--rr=off``
