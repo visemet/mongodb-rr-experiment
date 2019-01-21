@@ -39,3 +39,17 @@ Setup
         --rr=chaos                                              \
         --suite=change_streams_sharded_collections_passthrough  \
         jstests/change_streams/change_stream_shell_helper.js
+
+Results
+-------
+
+* 0 / 1000 when using ``--rr=chaos``
+
+  .. code-block:: console
+
+        $ du -hs ~/.local/share/rr
+        3.0G	/home/ubuntu/.local/share/rr
+
+* Didn't attempt with ``--rr=record``
+
+* Didn't attempt with ``--rr=off``
