@@ -35,3 +35,17 @@ Setup
         --suite=replica_sets_kill_secondaries_jscore_passthrough  \
         --storageEngineCacheSizeGB=1                              \
         jstests/core/geo_group.js
+
+Results
+-------
+
+* 0 / 1000 when using ``--rr=chaos``
+
+  .. code-block:: console
+
+        $ du -hs ~/.local/share/rr
+        17G	/home/ubuntu/.local/share/rr
+
+* Didn't attempt with ``--rr=record``
+
+* Didn't attempt with ``--rr=off``
