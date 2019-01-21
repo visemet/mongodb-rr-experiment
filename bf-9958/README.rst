@@ -36,3 +36,17 @@ Setup
         --suite=no_passthrough       \
         --storageEngine=mobile       \
         jstests/noPassthrough/mongoebench_test.js
+
+Results
+-------
+
+* 71 / 1000 when using ``--rr=chaos``
+
+  .. code-block:: console
+
+        $ du -hs ~/.local/share/rr
+        2.6G	/home/ubuntu/.local/share/rr
+
+* 2 / 1000 when using ``--rr=record``
+
+* 0 / 1000 when using ``--rr=off``
