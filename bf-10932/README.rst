@@ -21,7 +21,7 @@ Setup
 
 .. code-block:: sh
 
-    git checkout mongodb-rr-experiment
+    git checkout visemet/mongodb-rr-experiment
 
     rm -rf ~/.local/share/rr/*
     python2 buildscripts/resmoke.py  \

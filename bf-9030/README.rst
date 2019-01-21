@@ -17,7 +17,7 @@ Setup
 
 .. code-block:: sh
 
-    git checkout mongodb-rr-experiment
+    git checkout visemet/mongodb-rr-experiment
     git am ../bf-9030/patches/0001-Remove-enableMajorityReadConcern-option-from-mongod.patch
     git am ../bf-9030/patches/0002-Remove-transactionLifetimeLimitSeconds-server-parame.patch
     git am ../bf-9030/patches/0003-Remove-disableLogicalSessionCacheRefresh-server-para.patch

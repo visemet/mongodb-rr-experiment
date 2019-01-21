@@ -68,7 +68,7 @@ Building MongoDB
 
     git remote add visemet https://github.com/visemet/mongo.git
     git fetch visemet mongodb-rr-experiment
-    git checkout mongodb-rr-experiment
+    git checkout visemet/mongodb-rr-experiment
 
     python2 -m pip install -r etc/pip/dev-requirements.txt
     python2 -m pip install --user psutil==5.4.8

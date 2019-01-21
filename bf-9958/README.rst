@@ -20,7 +20,7 @@ Setup
 
 .. code-block:: sh
 
-    git checkout mongodb-rr-experiment
+    git checkout visemet/mongodb-rr-experiment
     git am ../bf-9958/patches/0001-Remove-enableMajorityReadConcern-option-from-mongod.patch
     git checkout 9184a03574c398b087b929fda8ed428f0c64d28c -- jstests/noPassthrough/mongoebench_test.js
     git commit -m 'Use version of test from failing commit.'
