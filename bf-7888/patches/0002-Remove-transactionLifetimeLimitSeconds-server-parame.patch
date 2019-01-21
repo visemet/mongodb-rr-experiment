@@ -1,0 +1,31 @@
+From 0995b6642bcff544a33c1676b228cd3ec07fb569 Mon Sep 17 00:00:00 2001
+From: Max Hirschhorn <max.hirschhorn@mongodb.com>
+Date: Mon, 21 Jan 2019 14:16:43 -0500
+Subject: [PATCH 2/3] Remove transactionLifetimeLimitSeconds server parameter.
+
+---
+ buildscripts/resmokelib/core/programs.py | 8 --------
+ 1 file changed, 8 deletions(-)
+
+diff --git a/buildscripts/resmokelib/core/programs.py b/buildscripts/resmokelib/core/programs.py
+index 0d8248149d..756b6553ed 100644
+--- a/buildscripts/resmokelib/core/programs.py
++++ b/buildscripts/resmokelib/core/programs.py
+@@ -78,14 +78,6 @@ def mongod_program(  # pylint: disable=too-many-branches
+     if "disableLogicalSessionCacheRefresh" not in suite_set_parameters:
+         suite_set_parameters["disableLogicalSessionCacheRefresh"] = True
+ 
+-    # There's a periodic background thread that checks for and aborts expired transactions.
+-    # "transactionLifetimeLimitSeconds" specifies for how long a transaction can run before expiring
+-    # and being aborted by the background thread. It defaults to 60 seconds, which is too short to
+-    # be reliable for our tests. Setting it to 3 hours, so that it is longer than the 2 hours we
+-    # allow JS tests to run before timing them out.
+-    if "transactionLifetimeLimitSeconds" not in suite_set_parameters:
+-        suite_set_parameters["transactionLifetimeLimitSeconds"] = 3 * 60 * 60
+-
+     # The periodic no-op writer writes an oplog entry of type='n' once every 10 seconds. This has
+     # the potential to mask issues such as SERVER-31609 because it allows the operationTime of
+     # cluster to advance even if the client is blocked for other reasons. We should disable the
+-- 
+2.17.1
+
