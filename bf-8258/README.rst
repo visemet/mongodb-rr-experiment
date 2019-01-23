@@ -39,3 +39,21 @@ Setup
         --suite=replica_sets_kill_secondaries_jscore_passthrough  \
         --storageEngineCacheSizeGB=1                              \
         jstests/core/queryoptimizer3.js
+
+Results
+-------
+
+The 1000 runs were manually interrupted due the test not making forward progress. It isn't clear why
+there were executions of the ``queryoptimizer3.js`` test and the ``PeriodicKillSecondaries`` hook
+that were running for >30 hours.
+
+* 0 / 636 when using ``--rr=chaos``
+
+  .. code-block:: console
+
+        $ du -hs ~/.local/share/rr
+        98G	/home/ubuntu/.local/share/rr
+
+* Didn't attempt with ``--rr=record``
+
+* Didn't attempt with ``--rr=off``
