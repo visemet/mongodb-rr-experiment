@@ -32,3 +32,20 @@ Setup
         --rr=chaos                   \
         --suite=sharding_auth        \
         jstests/sharding/recovering_slaveok.js
+
+Results
+-------
+
+The 1000 runs were interrupted due to the machine's 200GB disk becoming full after running for
+approximately 40 hours.
+
+* 0 / 687 when using ``--rr=chaos``
+
+  .. code-block:: console
+
+        $ du -hs ~/.local/share/rr
+        126G	/home/ubuntu/.local/share/rr
+
+* Didn't attempt with ``--rr=record``
+
+* Didn't attempt with ``--rr=off``
